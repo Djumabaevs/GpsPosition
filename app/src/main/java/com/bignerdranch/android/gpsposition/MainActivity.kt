@@ -1,5 +1,6 @@
 package com.bignerdranch.android.gpsposition
 
+import android.content.Context
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
@@ -20,6 +21,15 @@ class MainActivity : AppCompatActivity(), LocationListener {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        title = "Kotlin Application"
+        binding.getLocation.setOnClickListener {
+            getLocation()
+        }
+
+    }
+
+    private fun getLocation() {
+        locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
     }
 
